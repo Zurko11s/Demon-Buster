@@ -20,7 +20,8 @@ public class EnemyMovement : MonoBehaviour
         LocalPosition = LocalPosition.normalized;
         transform.Translate(LocalPosition.x * Time.deltaTime * EnemySpeed, 
                             0f, 
-                            LocalPosition.z * Time.deltaTime * EnemySpeed);
+                            LocalPosition.z * Time.deltaTime * EnemySpeed, Space.World);
+        transform.LookAt(m_player.transform);  
 
     }
 }
